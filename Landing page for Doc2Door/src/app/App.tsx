@@ -101,7 +101,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   Register your interest and our team will reach out with next steps, including qualification verification and onboarding details.
                 </p>
 
-                {!submitted ? (
+               {!submitted ? (
   <form onSubmit={handleSubmit} className="space-y-3">
     <div>
       <input
@@ -111,16 +111,23 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
-        className="..."
+        className="w-full px-5 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-lg shadow-sm"
       />
 
-      <div className="mt-2 space-y-1">
-        <p className="text-sm text-gray-500 text-center">No commitment required</p>
-        <p className="text-xs text-gray-400 text-center">For qualified healthcare professionals only</p>
+      <div className="mt-3 space-y-1">
+        <p className="text-sm text-gray-500 text-center">
+          No commitment required
+        </p>
+        <p className="text-xs text-gray-400 text-center">
+          For qualified healthcare professionals only
+        </p>
       </div>
     </div>
 
-    <button type="submit" className="...">
+    <button
+      type="submit"
+      className="w-full bg-[#2563EB] text-white py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:scale-[1.02]"
+    >
       Register Interest
     </button>
   </form>
@@ -397,28 +404,24 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </p>
 
 {!submitted ? (
-  <form onSubmit={handleSubmit} className="space-y-3">
-    <div>
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        required
-        className="..."
-      />
+  <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+  <input
+    type="email"
+    name="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email"
+    required
+    className="w-full px-5 py-4 rounded-xl border-2 border-white/80 bg-white/10 text-white placeholder:text-white/70 focus:outline-none focus:ring-4 focus:ring-white/20 focus:border-white transition-all text-lg shadow-sm"
+  />
 
-      <div className="mt-2 space-y-1">
-        <p className="text-sm text-gray-500 text-center">No commitment required</p>
-        <p className="text-xs text-gray-400 text-center">For qualified healthcare professionals only</p>
-      </div>
-    </div>
-
-    <button type="submit" className="...">
-      Register Interest
-    </button>
-  </form>
+  <button
+    type="submit"
+    className="w-full bg-white text-[#2563EB] py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-all shadow-lg hover:shadow-xl"
+  >
+    Register Interest
+  </button>
+</form>
 ) : (
   <div className="text-center py-6">
     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
