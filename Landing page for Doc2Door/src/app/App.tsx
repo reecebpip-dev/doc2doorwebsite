@@ -106,7 +106,7 @@ export default function App() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
                     <p className="text-gray-600 text-lg">We'll be in touch soon with early access details.</p>
                   </div>
-                )}
+                )
               </div>
 
               {/* Professional Note - Below Form */}
@@ -398,7 +398,7 @@ export default function App() {
               <h3 className="text-3xl font-bold text-white mb-2">You're on the list!</h3>
               <p className="text-blue-100 text-lg">We'll be in touch soon with early access details.</p>
             </div>
-          )}
+          )
         </div>
       </section>
 
