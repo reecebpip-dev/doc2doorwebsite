@@ -4,16 +4,9 @@ import * as Accordion from '@radix-ui/react-accordion';
 
 export default function App() {
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      // In production, this would send to your backend/waitlist service
-      console.log('Waitlist signup:', email);
-    }
-  };
+ 
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
@@ -78,10 +71,15 @@ export default function App() {
                 </p>
 
                 {!submitted ? (
-                  <form onSubmit={handleSubmit} className="space-y-3">
+                  <form
+                    action="https://formspree.io/f/xjgljjvj"
+                    method="POST"
+                    className="space-y-3"
+                  >
                     <div>
                       <input
                         type="email"
+                        name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
@@ -366,10 +364,15 @@ export default function App() {
           </p>
 
           {!submitted ? (
-            <form onSubmit={handleSubmit} className="mt-8">
+            <form
+                    action="https://formspree.io/f/xjgljjvj"
+                    method="POST"
+                    className="space-y-3"
+                  >
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   type="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
