@@ -70,7 +70,7 @@ export default function App() {
                   Register your interest and our team will reach out with next steps, including qualification verification and onboarding details.
                 </p>
 
-                {!submitted ? (
+                
                   <form
                     action="https://formspree.io/f/xjgljjvj"
                     method="POST"
@@ -363,7 +363,7 @@ export default function App() {
             Register your interest and we'll guide you through the next steps.
           </p>
 
-          {!submitted ? (
+          
             <form
                     action="https://formspree.io/f/xjgljjvj"
                     method="POST"
