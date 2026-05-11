@@ -101,40 +101,44 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
                   Register your interest and our team will reach out with next steps, including qualification verification and onboarding details.
                 </p>
 
-                
-              
-                  <form onSubmit={handleSubmit} className="space-y-3">
-                  
-                    <div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
-                        required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 transition-all shadow-sm"
-                      />
-                      <div className="mt-2 space-y-1">
-                        <p className="text-sm text-gray-500 text-center">No commitment required</p>
-                        <p className="text-xs text-gray-400 text-center">For qualified healthcare professionals only</p>
-                      </div>
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-[#2563EB] text-white py-3 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02]"
-                    >
-                      Register Interest
-                    </button>
-                  </form>
-                
-                  <div className="text-center py-6">
-                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-10 h-10 text-green-600" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
-                    <p className="text-gray-600 text-lg">We'll be in touch soon with early access details.</p>
-                  </div>
+                {!submitted ? (
+  <form onSubmit={handleSubmit} className="space-y-3">
+    <div>
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        required
+        className="..."
+      />
+
+      <div className="mt-2 space-y-1">
+        <p className="text-sm text-gray-500 text-center">No commitment required</p>
+        <p className="text-xs text-gray-400 text-center">For qualified healthcare professionals only</p>
+      </div>
+    </div>
+
+    <button type="submit" className="...">
+      Register Interest
+    </button>
+  </form>
+) : (
+  <div className="text-center py-6">
+    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <CheckCircle className="w-10 h-10 text-green-600" />
+    </div>
+
+    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      You're on the list!
+    </h3>
+
+    <p className="text-gray-600 text-lg">
+      We'll be in touch soon with next steps.
+    </p>
+  </div>
+)}
                 
               </div>
 
@@ -392,38 +396,44 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             Register your interest and we'll guide you through the next steps.
           </p>
 
-          
-            <form onSubmit={handleSubmit} className="space-y-3">
-            
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="flex-1 px-5 py-4 rounded-xl focus:outline-none focus:ring-4 focus:ring-white/50 text-lg shadow-xl border-2 border-white/80 focus:border-white transition-all"
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-[#2563EB] px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 whitespace-nowrap"
-                >
-                  Register Interest
-                </button>
-              </div>
-              <p className="text-blue-100 text-sm mt-4">
-                No commitment required • For healthcare professionals only
-              </p>
-            </form>
-          
-            <div className="mt-8 bg-white/10 backdrop-blur rounded-2xl p-10 border border-white/20">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
-                <CheckCircle className="w-10 h-10 text-[#2563EB]" />
-              </div>
-              <h3 className="text-3xl font-bold text-white mb-2">You're on the list!</h3>
-              <p className="text-blue-100 text-lg">We'll be in touch soon with early access details.</p>
-            </div>
+{!submitted ? (
+  <form onSubmit={handleSubmit} className="space-y-3">
+    <div>
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        required
+        className="..."
+      />
+
+      <div className="mt-2 space-y-1">
+        <p className="text-sm text-gray-500 text-center">No commitment required</p>
+        <p className="text-xs text-gray-400 text-center">For qualified healthcare professionals only</p>
+      </div>
+    </div>
+
+    <button type="submit" className="...">
+      Register Interest
+    </button>
+  </form>
+) : (
+  <div className="text-center py-6">
+    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <CheckCircle className="w-10 h-10 text-green-600" />
+    </div>
+
+    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      You're on the list!
+    </h3>
+
+    <p className="text-gray-600 text-lg">
+      We'll be in touch soon with next steps.
+    </p>
+  </div>
+)}
           
         </div>
       </section>
