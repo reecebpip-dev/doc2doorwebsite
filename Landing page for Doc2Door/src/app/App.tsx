@@ -4,7 +4,38 @@ import * as Accordion from '@radix-ui/react-accordion';
 
 export default function App() {
   const [email, setEmail] = useState('');
-  
+  const [submitted, setSubmitted] = useState(false);
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  try {
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (response.ok) {
+      setSubmitted(true);
+      setEmail('');
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    alert('Something went wrong. Please try again.');
+  }
+};
 
  
 
@@ -71,11 +102,9 @@ export default function App() {
                 </p>
 
                 
-                  <form
-                    action="https://formspree.io/f/xjgljjvj"
-                    method="POST"
-                    className="space-y-3"
-                  >
+              
+                  <form onSubmit={handleSubmit} className="space-y-3">
+                  
                     <div>
                       <input
                         type="email"
@@ -98,7 +127,7 @@ export default function App() {
                       Register Interest
                     </button>
                   </form>
-                ) : (
+                
                   <div className="text-center py-6">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <CheckCircle className="w-10 h-10 text-green-600" />
@@ -106,7 +135,7 @@ export default function App() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
                     <p className="text-gray-600 text-lg">We'll be in touch soon with early access details.</p>
                   </div>
-                )
+                
               </div>
 
               {/* Professional Note - Below Form */}
@@ -364,11 +393,8 @@ export default function App() {
           </p>
 
           
-            <form
-                    action="https://formspree.io/f/xjgljjvj"
-                    method="POST"
-                    className="space-y-3"
-                  >
+            <form onSubmit={handleSubmit} className="space-y-3">
+            
               <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <input
                   type="email"
@@ -390,7 +416,7 @@ export default function App() {
                 No commitment required • For healthcare professionals only
               </p>
             </form>
-          ) : (
+          
             <div className="mt-8 bg-white/10 backdrop-blur rounded-2xl p-10 border border-white/20">
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl">
                 <CheckCircle className="w-10 h-10 text-[#2563EB]" />
@@ -398,7 +424,7 @@ export default function App() {
               <h3 className="text-3xl font-bold text-white mb-2">You're on the list!</h3>
               <p className="text-blue-100 text-lg">We'll be in touch soon with early access details.</p>
             </div>
-          )
+          
         </div>
       </section>
 
