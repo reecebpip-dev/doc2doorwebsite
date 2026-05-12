@@ -17,7 +17,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   }
 
   try {
-    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    const response = await fetch('https://formspree.io/f/xjgljjvj', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
